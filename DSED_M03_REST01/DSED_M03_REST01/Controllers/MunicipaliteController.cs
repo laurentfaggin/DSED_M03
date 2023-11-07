@@ -21,7 +21,7 @@ namespace apim
         [ProducesResponseType(200)]
         public ActionResult <IEnumerable<MunicipaliteModel>> Get()
         {
-            return Ok(m_manipulationMunicipalites.ListerMunicipalitesActives());
+            return Ok(m_manipulationMunicipalites.ListerMunicipalitesActives().Select(m => new MunicipaliteModel(m)));
         }
 
         // GET: api/municipalites/municipaliteId
